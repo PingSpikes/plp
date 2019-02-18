@@ -1,0 +1,11 @@
+
+ create table UserRole(UserName varchar2(20),Password varchar2(12),RoleCode varchar2(10));
+
+create table claim(ClaimNumber number(10),ClaimReason varchar2(30),AccidentLocationStreet varchar2(40),accidentCity varchar2(15),accidentState varchar2(15),accidentZip number(5),claimType varchar2(30),policyNumber number(10), foreign key(policyNumber) references Policy(PolicyNumber));
+
+
+ create table PolicyDetails(PolicyNumber number(10), QuestionID varchar2(15),Answer varchar2(30), foreign key(PolicyNumber) references Policy(PolicyNumber));
+
+
+
+ create table Policy(PolicyNumber number(10) primary key,PolicyPremium decimal(4,8),AccountNumber number(10), foreign key(AccountNumber) references Account(AccountNumber));
